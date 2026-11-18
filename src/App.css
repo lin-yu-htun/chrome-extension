@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* Full screen background */
+.dashboard-container {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Dark overlay for readability */
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* --- Center Layout --- */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.greeting {
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Search Box Styling --- */
+.search-input {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Quick Links Styling --- */
+.quick-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quick-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.link-item:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.link-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  margin-bottom: 0.5rem;
+}
+
+/* React Icons adjustments */
+.react-icon-svg {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Custom Favicon adjustments */
+.custom-favicon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+/* Delete Button styling */
+.delete-link-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.link-item:hover .delete-link-btn {
+  opacity: 1;
+}
+
+.add-link-form {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.add-link-form input {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  outline: none;
+}
+
+.add-link-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.add-link-form button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Weather Widget (Top Right) --- */
+.top-right {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.weather-widget {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  color: white;
+}
+
+.weather-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* --- Learnex Branding (Bottom Left) --- */
+.bottom-left {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 1.2rem;
+  border-radius: 15px;
+}
+
+.learnex-logo {
+  border-radius: 8px;
+  max-width: 150px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.brand-text span {
+  color: #94a3b8;
+}
+
+.brand-text strong {
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+}
+
+.loading-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #111827;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.loading-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.loading-container h2 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.loading-container p {
+  color: #aaa;
+  font-size: 14px;
+}
