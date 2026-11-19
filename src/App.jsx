@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import LearnexLogo from "./assets/learnex-logo-blue-png";
 const App = () => {
   const [bgImage, setBgImage] = useState("");
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,13 @@ const App = () => {
           <h1 className="greeting">
             Good {new Date().getHours() < 12 ? "Morning" : "Evening"},coder.
           </h1>
+          <div className="bottom-left">
+            <img src="" alt="Learnex Logo" />
+            <div className="brand-text">
+              <span>Built In</span>
+              <strong>Learnex React Course</strong>
+            </div>
+          </div>
         </div>
       </div>
     </div>
