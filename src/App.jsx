@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import LearnexLogo from "./assets/learnex-logo-blue-png";
+import LearnexLogo from "./assets/learnex-logo-blue.png";
+import Searchbox from "./components/Searchbox";
+import WeatherWidget from "./components/WeatherWidget";
+
 const App = () => {
   const [bgImage, setBgImage] = useState("");
   const [loading, setLoading] = useState(true);
@@ -49,16 +52,20 @@ const App = () => {
       }}
     >
       <div className="overlay">
+        <div className="top-right">
+          <WeatherWidget />
+        </div>
         <div className="center-content">
           <h1 className="greeting">
-            Good {new Date().getHours() < 12 ? "Morning" : "Evening"},coder.
+            Good {new Date().getHours() < 12 ? "Moring" : "Evening"}, Coder
           </h1>
-          <div className="bottom-left">
-            <img src="" alt="Learnex Logo" />
-            <div className="brand-text">
-              <span>Built In</span>
-              <strong>Learnex React Course</strong>
-            </div>
+          <Searchbox />
+        </div>
+        <div className="bottom-left">
+          <img className="learnex-logo" src={LearnexLogo} alt="Learnex Logo" />{" "}
+          <div className="brand-text">
+            <span>Built In</span>
+            <strong>Learnex React Course</strong>
           </div>
         </div>
       </div>
