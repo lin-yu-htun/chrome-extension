@@ -3,6 +3,7 @@ import "./App.css";
 import LearnexLogo from "./assets/learnex-logo-blue.png";
 import Searchbox from "./components/Searchbox";
 import WeatherWidget from "./components/WeatherWidget";
+import QuickLink from "./components/QuickLink";
 
 const App = () => {
   const [bgImage, setBgImage] = useState("");
@@ -60,6 +61,7 @@ const App = () => {
             Good {new Date().getHours() < 12 ? "Moring" : "Evening"}, Coder
           </h1>
           <Searchbox />
+          <QuickLink />
         </div>
         <div className="bottom-left">
           <img className="learnex-logo" src={LearnexLogo} alt="Learnex Logo" />{" "}
